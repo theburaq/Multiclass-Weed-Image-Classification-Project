@@ -49,7 +49,8 @@ The goal is to develop a model that can help farmers automate the identification
 5. **Deployment**
  * Developed a web interface using Streamlit for real-time predictions.
 
-**(EDIT THE BELOW AFTER ULOADING ALL THE FILES)**
+#**(EDIT THE BELOW AFTER ULOADING ALL THE FILES)**
+
 📈 Key Results
 Best Performing Model: (Mention your top-performing model, e.g., ResNet-50 with transfer learning)
 Accuracy: Specify the percentage, e.g., 92.4%
