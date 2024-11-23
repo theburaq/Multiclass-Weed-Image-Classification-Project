@@ -5,7 +5,7 @@ This is an AgriAI HIVE project done during my Internship with LiveAI.
 Weed infestation is a critical challenge in sustainable agriculture, impacting crop yields and increasing reliance on herbicides. This project addresses the need for precise weed identification by leveraging deep learning to classify 8 distinct weed categories using over 17,000 RGB images. The project also features a user-friendly web application interface developed using Streamlit for real-time weed classification.
 
 ## 🔍 Objective
-The goal is to develop a model that can help farmers automate the identification of various weed species, reducing manual effort and improving crop yield.
+The goal is to develop a model that can help farmers automate the identification of various weed species, reducing manual effort and improving crop yield. We experimented on weed datasets by DeepWeed using two CNN architectures namely ResNet-50 and Inception-v3, and compare the results.
 
 ## 💡 Features
 * **Multiclass Classification:** Classifies 8 distinct weed categories.
