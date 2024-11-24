@@ -38,6 +38,7 @@ The goal is to develop a model that can help farmers automate the identification
   * Normalization for consistency across the dataset.
 2. **Model Development:**
  * **Transfer Learning:** Fine-tuned ResNet-50 and Inception-v3 pretrained on ImageNet.
+    * 1_ResNet50_from_scratch_Final.ipynb
     * (ADD THE JUPYTER NB LINKS HERE AFTER UPLOADING)
  * **Custom Model:** Designed a CNN(ResNet-50) from scratch for comparison.
     * (ADD THE JUPYTER NB LINKS HERE AFTER UPLOADING)
@@ -45,8 +46,10 @@ The goal is to develop a model that can help farmers automate the identification
  * Loss function: CrossEntropyLoss
  * Optimizer: Adam
  * Metrics: Confusion matrix & ROC/AUC curves
+ * 
 4. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters: (ADD THE JUPYTER NB LINKS HERE AFTER UPLOADING)
-5. **Deployment**
+   
+5. **Deployment:**
  * Developed a web interface using Streamlit for real-time predictions.
 
 #**(EDIT THE BELOW AFTER ULOADING ALL THE FILES)**
