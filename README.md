@@ -1,5 +1,5 @@
 # 🌱 Multiclass Weed Image Classification Using Deep Learning 🌾
-This is an AgriAI HIVE project done during my Internship with LiveAI.
+This is an AgriAI HIVE project done during my Internship with [LiveAI](https://www.liveai.eu/) .
 
 ## 🌟 Project Overview
 Weed infestation is a critical challenge in sustainable agriculture, impacting crop yields and increasing reliance on herbicides. This project addresses the need for precise weed identification by leveraging deep learning to classify 8 distinct weed categories using over 17,000 RGB images. The project also features a user-friendly web application interface developed using Streamlit for real-time weed classification.
