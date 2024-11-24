@@ -29,6 +29,7 @@ The goal is to develop a model that can help farmers automate the identification
 * **Front-End:** Streamlit
 * **Programming Language:** Python
 * **Additional Libraries:** NumPy, Pandas, Matplotlib, Torchvision
+* **Others:** OpenCV, Scikit-Learn
 
 ## 📊 Methodology
 1. **Data Preprocessing:**
@@ -48,7 +49,7 @@ The goal is to develop a model that can help farmers automate the identification
  * Optimizer: Adam
  * Metrics: Confusion matrix & ROC/AUC curves
    
-4. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters: [Ray Tune](/5_ray_tuner_final.ipynb)
+4. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters for our model: [Ray Tune](/5_ray_tuner_final.ipynb)
    
 5. **Deployment:**
  * Developed a web interface using Streamlit for real-time predictions.
