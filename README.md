@@ -10,8 +10,8 @@ The goal is to develop a model that can help farmers automate the identification
 ## 💡 Features
 * **Multiclass Classification:** Classifies 8 distinct weed categories.
 * **Data Augmentation:** Applied augmentation techniques to address data imbalance.
-* **Transfer Learning:** Utilized pretrained ResNet-50 and Inception-v3 architectures for experimentation.
-* **Custom Model:** Built a CNN (ResNet-50) model from scratch for performance benchmarking.
+* **Transfer Learning:** Utilized a pretrained Inception-v3 for performance benchmarking. 
+* **Custom Model:** Built a CNN (ResNet-50) model from scratch architectures for experimentation.
 * **Streamlit Integration:** Real-time predictions through a web-based application.
 
  ## 📂 Dataset
@@ -25,7 +25,7 @@ The goal is to develop a model that can help farmers automate the identification
 
 ## 🛠️ Tools & Technologies
 * **Framework:** PyTorch
-* **Models:** ResNet-50, Inception-v3, and a custom CNN
+* **Models:** A pre-trained Inception-v3 and Custom ResNet-50 
 * **Front-End:** Streamlit
 * **Programming Language:** Python
 * **Additional Libraries:** NumPy, Pandas, Matplotlib, Torchvision
@@ -33,16 +33,15 @@ The goal is to develop a model that can help farmers automate the identification
 ## 📊 Methodology
 1. **Data Preprocessing:**
   * Data cleaning and augmentation techniques.
-  * Splitting data into training, validation, and testing sets.
   * Resizing images to a uniform input size.
   * Normalization for consistency across the dataset.
 2. **Model Development:**
- * **Custom Model:** Designed a CNN(ResNet-50) from scratch for comparison.
-    * ResNet-50 from scratch model file: [ResNet-50 from scratch](/1_ResNet50_from_scratch_Final.ipynb)
- * **Transfer Learning:** Fine-tuned ResNet-50 and Inception-v3 pretrained on ImageNet.
-    * ResNet-50 from scratch with data augmentation model file: [ResNet-50 from scratch with data augmentation](/2_ResNet50-from-scratch-data-augmentation_Final.ipynb)
-    * ResNet-50 from scratch with pre-trained weights model file: [ResNet-50 from scratch with pre-trained weights](/3_ResNet50-from-scratch-pre-trained-weights_Final.ipynb)
+  * **Transfer Learning:** Inception-v3 pretrained on ImageNet. 
     * Pre-trained Inception-v3 model file: [Pre-trained Inception-v3](/4_Inception-v3-pre-trained-model_Final.ipynb)
+  * **Custom Model:** Designed a customed ResNet-50 model from scratch & finetuned it for comparison.
+    * ResNet-50 'custom model' file: [ResNet-50 from scratch](/1_ResNet50_from_scratch_Final.ipynb)
+    * ResNet-50 'custom model with data augmentation' file: [ResNet-50 from scratch with data augmentation](/2_ResNet50-from-scratch-data-augmentation_Final.ipynb)
+    * ResNet-50 'custom model with pre-trained weights' file: [ResNet-50 from scratch with pre-trained weights](/3_ResNet50-from-scratch-pre-trained-weights_Final.ipynb)
 
 3. **Training & Evaluation:**
  * Loss function: CrossEntropyLoss
