@@ -37,49 +37,48 @@ The goal is to develop a model that can help farmers automate the identification
   * Resizing images to a uniform input size.
   * Normalization for consistency across the dataset.
 2. **Model Development:**
- * **Transfer Learning:** Fine-tuned ResNet-50 and Inception-v3 pretrained on ImageNet.
-    * 1_ResNet50_from_scratch_Final.ipynb
-    * (ADD THE JUPYTER NB LINKS HERE AFTER UPLOADING)
  * **Custom Model:** Designed a CNN(ResNet-50) from scratch for comparison.
-    * (ADD THE JUPYTER NB LINKS HERE AFTER UPLOADING)
+    * ResNet-50 from scratch model file: [ResNet-50 from scratch](/1_ResNet50_from_scratch_Final.ipynb)
+ * **Transfer Learning:** Fine-tuned ResNet-50 and Inception-v3 pretrained on ImageNet.
+    * ResNet-50 from scratch with data augmentation model file: [ResNet-50 from scratch with data augmentation](/2_ResNet50-from-scratch-data-augmentation_Final.ipynb)
+    * ResNet-50 from scratch with pre-trained weights model file: [ResNet-50 from scratch with pre-trained weights](/3_ResNet50-from-scratch-pre-trained-weights_Final.ipynb)
+    * Pre-trained Inception-v3 model file: [Pre-trained Inception-v3](/4_Inception-v3-pre-trained-model_Final.ipynb)
+
 3. **Training & Evaluation:**
  * Loss function: CrossEntropyLoss
  * Optimizer: Adam
  * Metrics: Confusion matrix & ROC/AUC curves
- * 
-4. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters: (ADD THE JUPYTER NB LINKS HERE AFTER UPLOADING)
+   
+4. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters: [Ray Tune](/5_ray_tuner_final.ipynb)
    
 5. **Deployment:**
  * Developed a web interface using Streamlit for real-time predictions.
 
-#**(EDIT THE BELOW AFTER ULOADING ALL THE FILES)**
+## 📈 Key Results
+* Best Performing Model:
+  * Both ResNet-50 (custom with pre-trained weights) & Inception-v3 (pre-trained) models have had training accuracy of nearly 100% but differed by little margin in validation accuracy.
+  * Validation Accuracy for:
+     * ResNet-50 (custom with pre-trained weights)- around 90%
+     * Inception-v3 (pre-trained)- around 95% 
 
-📈 Key Results
-Best Performing Model: (Mention your top-performing model, e.g., ResNet-50 with transfer learning)
-Accuracy: Specify the percentage, e.g., 92.4%
-Other Metrics: Precision: X%, Recall: Y%, F1-Score: Z%.
-
-🎥 Demo
+## 🎥 Demo
 Click here to watch the demo video of the web application.
 * Features in the demo:
  * Upload an image of a weed.
- * Real-time classification and confidence score display.
+ * Real-time classification display.
  * Simple and intuitive user interface.
 
-📘 References
-Weed Detection in Upland Cotton Production Using Deep Learning
+## 📘 References
+* The Research paper: [https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/](https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/)
+* [https://paperswithcode.com/paper/deepweeds-a-multiclass-weed-species-image/review/](https://paperswithcode.com/paper/deepweeds-a-multiclass-weed-species-image/review/)
 
-🚀 Future Improvements
-Extend the dataset to include additional weed species.
-Explore advanced architectures like Vision Transformers.
-Deploy the Streamlit app on a cloud platform for wider accessibility.
-Incorporate explainability tools like Grad-CAM for better interpretability.
+## 🚀 Future Improvements
+* Extend the dataset to include additional weed species.
+* Explore advanced architectures like Vision Transformers.
+* Deploy the Streamlit app on a cloud platform for wider accessibility.
+* Incorporate explainability tools like Grad-CAM for better interpretability.
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions are welcome! Feel free to fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
-
-📝 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 
 
