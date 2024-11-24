@@ -62,11 +62,11 @@ The goal is to develop a model that can help farmers automate the identification
      * Inception-v3 (pre-trained)- around 95% 
 
 ## 🎥 Demo
-Click here to watch the demo video of the web application.
+Click here, [Weed Image Classification Demo](/Streamlit_Agri_Project.mp4) , to watch the demo video of the web application.
 * Features in the demo:
- * Upload an image of a weed.
- * Real-time classification display.
- * Simple and intuitive user interface.
+  * Upload an image of a weed.
+  * Real-time classification display.
+  * Simple and intuitive user interface.
 
 ## 📘 References
 * The Research paper: [https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/](https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/)
