@@ -5,12 +5,12 @@ This is an AgriAI HIVE project done during my Internship with [LiveAI](https://w
 Weed infestation is a critical challenge in sustainable agriculture, impacting crop yields and increasing reliance on herbicides. This project addresses the need for precise weed identification by leveraging deep learning to classify 8 distinct weed categories using over 17,000 RGB images. The project also features a user-friendly web application interface developed using Streamlit for real-time weed classification.
 
 ## 🔍 Objective
-The goal is to develop a model that can help farmers automate the identification of various weed species, reducing manual effort and improving crop yield. We experimented on weed datasets by DeepWeed using two CNN architectures namely ResNet-50 and Inception-v3, and compare the results.
+The goal is to develop a model that can help farmers automate the identification of various weed species, reducing manual effort and improving crop yield. We experimented on weed datasets by DeepWeed using three CNN architectures namely ResNet-34, ResNet-50 and Inception-v3, and compared their results.
 
 ## 💡 Features
 * **Multiclass Classification:** Classifies 8 distinct weed categories.
 * **Data Augmentation:** Applied augmentation techniques to address data imbalance.
-* **Transfer Learning:** Utilized a pretrained Inception-v3 for performance benchmarking. 
+* **Transfer Learning:** Utilized pretrained ResNet-34 & Inception-v3 models for performance benchmarking. 
 * **Custom Model:** Built a CNN (ResNet-50) model from scratch architectures for experimentation.
 * **Streamlit Integration:** Real-time predictions through a web-based application.
 
@@ -25,7 +25,7 @@ The goal is to develop a model that can help farmers automate the identification
 
 ## 🛠️ Tools & Technologies
 * **Framework:** PyTorch
-* **Models:** A pre-trained Inception-v3 and Custom ResNet-50 
+* **Models:** Pre-trained ResNet-34 & Inception-v3, and Custom ResNet-50 
 * **Front-End:** Streamlit
 * **Programming Language:** Python
 * **Additional Libraries:** NumPy, Pandas, Matplotlib, Torchvision
@@ -37,24 +37,25 @@ The goal is to develop a model that can help farmers automate the identification
   * Resizing images to a uniform input size.
   * Normalization for consistency across the dataset.
 2. **Model Development:**
-  * **Transfer Learning:** Inception-v3 pretrained on ImageNet. 
-    * Pre-trained Inception-v3 model file: [Pre-trained Inception-v3](/4_Inception-v3-pre-trained-model_Final.ipynb)
   * **Custom Model:** Designed a customed ResNet-50 model from scratch & finetuned it for comparison.
     * ResNet-50 'custom model' file: [ResNet-50 from scratch](/1_ResNet50_from_scratch_Final.ipynb)
     * ResNet-50 'custom model with data augmentation' file: [ResNet-50 from scratch with data augmentation](/2_ResNet50-from-scratch-data-augmentation_Final.ipynb)
     * ResNet-50 'custom model with pre-trained weights' file: [ResNet-50 from scratch with pre-trained weights](/3_ResNet50-from-scratch-pre-trained-weights_Final.ipynb)
+   * **Transfer Learning:** Utilized pretrained ResNet-34 & Inception-v3 models on ImageNet.
+     * Pre-trained ResNet-34 model file:
+     * Pre-trained Inception-v3 model file: [Pre-trained Inception-v3](/4_Inception-v3-pre-trained-model_Final.ipynb)
 
 3. **Training & Evaluation:**
  * Loss function: CrossEntropyLoss
  * Optimizer: Adam
- * Metrics: Confusion matrix & ROC/AUC curves
+ * Metrics: Confusion matrix, ROC/AUC curves & F1-Scores
    
 4. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters for our model: [Ray Tune](/5_ray_tuner_final.ipynb)
    
 5. **Deployment:**
  * Developed a web interface using Streamlit for real-time predictions.
 
-## 📈 Key Results
+## 📈 Key Results (EDIT THIS PART / ADD IMAGES)
 * Best Performing Model:
   * Both ResNet-50 (custom with pre-trained weights) & Inception-v3 (pre-trained) models have had training accuracy of nearly 100% but differed by little margin in validation accuracy.
   * Validation Accuracy for:
