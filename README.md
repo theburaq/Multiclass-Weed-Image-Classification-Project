@@ -32,12 +32,17 @@ The goal is to develop a model that can help farmers automate the identification
 * **Others:** OpenCV, Scikit-Learn
 
 ## 📊 Methodology
-1. **Data Preprocessing:**
+1. **Exploratory Data Analysis:**
+   * Over 1,000 images were collected of each weed species, totaling over 8,000 images of positive species classes. Images of neighbouring flora and backgrounds that did not contain the weed species of interest were collated into a single “negative” class.
+   * From bar charts and data, it's clear there's a class imbalance issue, with the "Negative" class having significantly more samples (9106) compared to other species (around 1000-1100 each):
+     ![Screenshot of the graphs of 'Class Imbalance'](/class-imbalance-graph.png)
+  
+2. **Data Preprocessing:**
    * Data cleaning and augmentation techniques.
    * Resizing images to a uniform input size.
    * Normalization for consistency across the dataset.
 
-2. **Model Development:**
+3. **Model Development:**
    * **Custom Model:** Designed a customed ResNet-50 model from scratch & finetuned it for comparison.
      * ResNet-50 'custom model' file: [ResNet-50 from scratch](/1-resnet50-from-scratch-plain-final.ipynb)
      * ResNet-50 'custom model with data augmentation' file: [ResNet-50 from scratch with data augmentation](/2-resnet50-from-scratch-data-augmentation-final.ipynb)
@@ -46,34 +51,42 @@ The goal is to develop a model that can help farmers automate the identification
      * Pre-trained ResNet-34 model file: [Pre-trained ResNet-34](/4-resnet34-pre-trained-model-final.ipynb)
      * Pre-trained Inception-v3 model file: [Pre-trained Inception-v3](/5-inception-v3-pre-trained-model-final.ipynb)
 
-3. **Training & Evaluation:**
+4. **Training & Evaluation:**
    * Loss function: CrossEntropyLoss
    * Optimizer: Adam
    * Metrics: Confusion matrix, ROC/AUC curves & F1-Scores
    
-4. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters for our model: [Ray Tune](/6_ray_tuner_final.ipynb)
+5. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters for our model: [Ray Tune](/6_ray_tuner_final.ipynb)
    
-5. **Deployment:**
+6. **Deployment:**
    * Developed a web interface using Streamlit for real-time predictions.
 
 ## 📈 Key Results
 **CNN Model Performance Analysis:**
 
-* The graphs in the below image present the performance of 3 different Convolutional Neural Network (CNN) architectures, i.e ResNet-50 with 3 variations, and pretrained ResNet-34 & Inception-v3 models--during training and validation on the given dataset. Each line represents a distinct model, and we can observe their training and validation accuracies and losses over 100 epochs.
+* The graphs in the below image present the performance of the different Convolutional Neural Network (CNN) architectures, i.e ResNet-50 with 3 variations, and pretrained ResNet-34 & Inception-v3 models--during training and validation on the given dataset. Each line represents a distinct model, and we can observe their training and validation accuracies and losses over 100 epochs.
 
 ![Screenshot of the graphs of 'train-val accuracies-losses for all the models'](/train-val-accuracies-losses-for-all-models.png)
 
-* <ins>Overall Observations:</ins>
-  * **Pretrained Models:** Using pre-trained weights generally leads to better performance, as evidenced by the higher accuracies and lower losses of the Pretrained-weights ResNet50, Pretrained ResNet34, and Pretrained Inception-v3 models compared to the Plain ResNet50.
-  * **Data Augmentation:** Data augmentation can help prevent overfitting, as seen in the improved validation accuracy of the Data Augment ResNet50 compared to the Plain ResNet50.
-  * **Architecture Choice:** The choice of architecture also plays a role. ResNet50 and ResNet34 seem to be better suited for this dataset than Inception-v3.
+* <ins>Comparison and Key Insights:</ins>
+1. **Plain ResNet-50:**
+   * Exhibited overfitting: Training accuracy soared, but validation accuracy lagged significantly (~60%).
+   * The validation loss was consistently high compared to other models.
 
-(INSERT A TABLE)
+2. **Data-Augmented ResNet-50:**
+   * Data augmentation greatly enhanced validation accuracy to 85% and reduced overfitting.
+   * Losses showed much smoother convergence compared to the plain model.
 
-* <ins>Key Findings:</ins>   
-  * **ResNet50 (Pretrained + Data Augmentation):** Outperforms all models, achieving the best train/validation accuracy and lowest loss.
-  * **Pretrained ResNet34 vs. Inception-v3:** ResNet34 shows better generalization and accuracy than Inception-v3 due to its residual connections, which enable deeper and more effective training.
-  * **Plain ResNet50:** Highlights the challenges of training deep models from scratch with imbalanced datasets, including overfitting and lower generalization.
+3. **Pretrained ResNet-50 (Weights):**
+   * Fine-tuning a pretrained ResNet-50 model was highly effective, achieving 90% validation accuracy.
+   * Loss curves were smooth and demonstrated faster convergence.
+
+4. **Pretrained ResNet-34:**
+   * Performed well but slightly trailed the pretrained ResNet-50 in both accuracy and loss metrics.
+
+5. **Pretrained Inception-v3:**
+   * Top-performing model, achieving the highest validation accuracy (92%) and the lowest loss values.
+   * Particularly excelled in identifying minority classes, likely due to its multiscale feature extraction capabilities.
 
 ## 🎥 Demo
 Click here, [Weed Image Classification Demo](/Streamlit_Agri_Project.gif) , to watch the demo video of the web application.
@@ -81,16 +94,21 @@ Click here, [Weed Image Classification Demo](/Streamlit_Agri_Project.gif) , to w
   * Upload an image of a weed.
   * Real-time classification display.
   * Simple and intuitive user interface.
+ 
+ ## 🚀 Future Improvements
+* Extend the dataset to include additional weed species.
+* Exploring techniques like class weighting, oversampling, or SMOTE could further enhance model performance.
+* Modern architectures like EfficientNet or Vision Transformers (ViTs) could be tested for this task.
+* Experiment with ensemble methods combining ResNet-50 and Inception-v3 for improved performance. Incorporate attention mechanisms to focus on class-specific features.
+* Visualizing model decisions using Grad-CAM or similar tools could provide insights into the features learned by the CNNs.
+* Deploy the Streamlit app on a cloud platform for wider accessibility.
+
+## 🪴 Conclusion
+This project demonstrated the potential of CNN architectures, particularly pretrained models like Inception-v3, in tackling multiclass weed classification. While significant strides were made in achieving high accuracy and generalization, challenges like class imbalance remain. Future work could focus on augmenting minority classes and leveraging advanced architectures for even better results.
 
 ## 📘 References
 * The Research paper: [https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/](https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/)
 * [https://paperswithcode.com/paper/deepweeds-a-multiclass-weed-species-image/review/](https://paperswithcode.com/paper/deepweeds-a-multiclass-weed-species-image/review/)
-
-## 🚀 Future Improvements
-* Extend the dataset to include additional weed species.
-* Explore advanced architectures like Vision Transformers.
-* Deploy the Streamlit app on a cloud platform for wider accessibility.
-* Incorporate explainability tools like Grad-CAM for better interpretability.
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
