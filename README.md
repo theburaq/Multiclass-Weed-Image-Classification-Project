@@ -33,34 +33,47 @@ The goal is to develop a model that can help farmers automate the identification
 
 ## 📊 Methodology
 1. **Data Preprocessing:**
-  * Data cleaning and augmentation techniques.
-  * Resizing images to a uniform input size.
-  * Normalization for consistency across the dataset.
+   * Data cleaning and augmentation techniques.
+   * Resizing images to a uniform input size.
+   * Normalization for consistency across the dataset.
+
 2. **Model Development:**
-  * **Custom Model:** Designed a customed ResNet-50 model from scratch & finetuned it for comparison.
-    * ResNet-50 'custom model' file: [ResNet-50 from scratch](/1_ResNet50_from_scratch_Final.ipynb)
-    * ResNet-50 'custom model with data augmentation' file: [ResNet-50 from scratch with data augmentation](/2_ResNet50-from-scratch-data-augmentation_Final.ipynb)
-    * ResNet-50 'custom model with pre-trained weights' file: [ResNet-50 from scratch with pre-trained weights](/3_ResNet50-from-scratch-pre-trained-weights_Final.ipynb)
+   * **Custom Model:** Designed a customed ResNet-50 model from scratch & finetuned it for comparison.
+     * ResNet-50 'custom model' file: [ResNet-50 from scratch](/1-resnet50-from-scratch-plain-final.ipynb)
+     * ResNet-50 'custom model with data augmentation' file: [ResNet-50 from scratch with data augmentation](/2-resnet50-from-scratch-data-augmentation-final.ipynb)
+     * ResNet-50 'custom model with pre-trained weights' file: [ResNet-50 from scratch with pre-trained weights](/3-resnet50-from-scratch-pre-trained-weight-final.ipynb)
    * **Transfer Learning:** Utilized pretrained ResNet-34 & Inception-v3 models on ImageNet.
-     * Pre-trained ResNet-34 model file:
-     * Pre-trained Inception-v3 model file: [Pre-trained Inception-v3](/4_Inception-v3-pre-trained-model_Final.ipynb)
+     * Pre-trained ResNet-34 model file: [Pre-trained ResNet-34](/4-resnet34-pre-trained-model-final.ipynb)
+     * Pre-trained Inception-v3 model file: [Pre-trained Inception-v3](/5-inception-v3-pre-trained-model-final.ipynb)
 
 3. **Training & Evaluation:**
- * Loss function: CrossEntropyLoss
- * Optimizer: Adam
- * Metrics: Confusion matrix, ROC/AUC curves & F1-Scores
+   * Loss function: CrossEntropyLoss
+   * Optimizer: Adam
+   * Metrics: Confusion matrix, ROC/AUC curves & F1-Scores
    
-4. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters for our model: [Ray Tune](/5_ray_tuner_final.ipynb)
+4. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters for our model: [Ray Tune](/6_ray_tuner_final.ipynb)
    
 5. **Deployment:**
- * Developed a web interface using Streamlit for real-time predictions.
+   * Developed a web interface using Streamlit for real-time predictions.
 
-## 📈 Key Results (EDIT THIS PART / ADD IMAGES)
-* Best Performing Model:
-  * Both ResNet-50 (custom with pre-trained weights) & Inception-v3 (pre-trained) models have had training accuracy of nearly 100% but differed by little margin in validation accuracy.
-  * Validation Accuracy for:
-     * ResNet-50 (custom with pre-trained weights)- around 90%
-     * Inception-v3 (pre-trained)- around 95% 
+## 📈 Key Results
+**CNN Model Performance Analysis:**
+
+* The graphs in the below image present the performance of 3 different Convolutional Neural Network (CNN) architectures, i.e ResNet-50 with 3 variations, and pretrained ResNet-34 & Inception-v3 models--during training and validation on the given dataset. Each line represents a distinct model, and we can observe their training and validation accuracies and losses over 100 epochs.
+
+![Screenshot of the graphs of 'train-val accuracies-losses for all the models'](/train-val-accuracies-losses-for-all-models.png)
+
+* <ins>Overall Observations:</ins>
+  * **Pretrained Models:** Using pre-trained weights generally leads to better performance, as evidenced by the higher accuracies and lower losses of the Pretrained-weights ResNet50, Pretrained ResNet34, and Pretrained Inception-v3 models compared to the Plain ResNet50.
+  * **Data Augmentation:** Data augmentation can help prevent overfitting, as seen in the improved validation accuracy of the Data Augment ResNet50 compared to the Plain ResNet50.
+  * **Architecture Choice:** The choice of architecture also plays a role. ResNet50 and ResNet34 seem to be better suited for this dataset than Inception-v3.
+
+(INSERT A TABLE)
+
+* <ins>Key Findings:</ins>   
+  * **ResNet50 (Pretrained + Data Augmentation):** Outperforms all models, achieving the best train/validation accuracy and lowest loss.
+  * **Pretrained ResNet34 vs. Inception-v3:** ResNet34 shows better generalization and accuracy than Inception-v3 due to its residual connections, which enable deeper and more effective training.
+  * **Plain ResNet50:** Highlights the challenges of training deep models from scratch with imbalanced datasets, including overfitting and lower generalization.
 
 ## 🎥 Demo
 Click here, [Weed Image Classification Demo](/Streamlit_Agri_Project.gif) , to watch the demo video of the web application.
