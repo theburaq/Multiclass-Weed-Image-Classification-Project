@@ -62,7 +62,7 @@ The goal is to develop a model that can help farmers automate the identification
    * Optimizer: Adam
    * Metrics: Confusion matrix, ROC/AUC curves & F1-Scores
    
-5. We've also experimented by applying a **Ray Tune** to find out the best hyperparameters for our model: [Ray Tune](/6_ray_tuner_final.ipynb)
+5. I've also experimented by applying a **Ray Tune** to find out the best hyperparameters for our model: [Ray Tune](/6_ray_tuner_final.ipynb)
    
 6. **Deployment:**
    * Developed a web interface using Streamlit for real-time predictions.
@@ -110,7 +110,7 @@ Click here, [Weed Image Classification Demo](/Streamlit_Agri_Project.gif) , to w
 * Deploy the Streamlit app on a cloud platform for wider accessibility.
 
 ## 🪴 Conclusion
-This project demonstrated the potential of CNN architectures, particularly pretrained models like Inception-v3, in tackling multiclass weed classification. While significant strides were made in achieving high accuracy and generalization, challenges like class imbalance remain. Future work could focus on augmenting minority classes and leveraging advanced architectures for even better results.
+This project demonstrated the potential of CNN architectures, particularly pretrained models like ResNet-34 & Inception-v3, in tackling multiclass weed classification. While significant strides were made in achieving high accuracy and generalization, challenges like class imbalance remain. Future work could focus on augmenting minority classes and leveraging advanced architectures for even better results.
 
 ## 📘 References
 * The Research paper: [https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/](https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/)
