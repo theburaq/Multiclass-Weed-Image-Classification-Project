@@ -33,9 +33,15 @@ The goal is to develop a model that can help farmers automate the identification
 
 ## 📊 Methodology
 1. **Exploratory Data Analysis:**
+   * All 17,509 labelled images from DeepWeeds were partitioned into 60%-20%-20% splits of training, validation and testing subsets for k-fold cross validation with k = 5. More details about the process is mentioned here in the research paper: [https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/#Sec2](https://pmc.ncbi.nlm.nih.gov/articles/PMC6375952/#Sec2) .
+   * The selected weed species are local to pastoral grasslands across the state of Queensland. They include: "Chinee apple", "Snakeweed", "Lantana", "Prickly acacia", "Siam weed", "Parthenium", "Rubber vine" and "Parkinsonia".
+     ![Images of the sample weeds](/sample-weeds-image-1.png)
+
+
    * Over 1,000 images were collected of each weed species, totaling over 8,000 images of positive species classes. Images of neighbouring flora and backgrounds that did not contain the weed species of interest were collated into a single “negative” class.
    * From bar charts and data, it's clear there's a class imbalance issue, with the "Negative" class having significantly more samples (9106) compared to other species (around 1000-1100 each):
      ![Screenshot of the graphs of 'Class Imbalance'](/class-imbalance-graph.png)
+
   
 2. **Data Preprocessing:**
    * Data cleaning and augmentation techniques.
